@@ -1,4 +1,65 @@
 ```html
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f2f4f7;
+margin:0;
+padding:0;
+}
+
+.header{
+background:#11a0d8;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+padding:15px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+color:#0d47a1;
+font-size:28px;
+}
+
+.infraction{
+background:#f8f9fa;
+padding:15px;
+margin-top:12px;
+border-left:6px solid #11a0d8;
+border-radius:10px;
+font-size:20px;
+line-height:1.7;
+}
+
+.numero{
+font-weight:bold;
+color:#0d47a1;
+font-size:22px;
+}
+
+.amende{
+color:#c62828;
+font-weight:bold;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+font-weight:bold;
+}
+</style>
 <div class="card">
 
 <h2>💰 Taxes, Redevances et Amendes Administratives</h2>
@@ -53,51 +114,134 @@
 
 <div class="card">
 
-<h2>⚖️ Infractions au Code du Travail</h2>
+<h2>⚖️ Infractions et Sanctions</h2>
 
-<table border="1" width="100%" cellpadding="10">
+<div class="infraction">
+<span class="numero">Infraction 5</span><br>
+Non affichage de l'horaire du travail<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
 
-<tr>
-<th>N°</th>
-<th>Infraction</th>
-<th>Amende</th>
-</tr>
+<div class="infraction">
+<span class="numero">Infraction 6</span><br>
+Défaut de classification générale des emplois<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
 
-<tr>
-<td>1</td>
-<td>Non affichage de l'horaire du travail</td>
-<td>20 000 FC</td>
-</tr>
+<div class="infraction">
+<span class="numero">Infraction 7</span><br>
+Contrat de travail non constaté par écrit, signé et visé par l'ONEM<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
 
-<tr>
-<td>2</td>
-<td>Défaut de classification générale des emplois</td>
-<td>20 000 FC</td>
-</tr>
+<div class="infraction">
+<span class="numero">Infraction 8</span><br>
+Défaut du règlement intérieur de l'entreprise<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
 
-<tr>
-<td>3</td>
-<td>Contrat non constaté par écrit</td>
-<td>20 000 FC</td>
-</tr>
+<div class="infraction">
+<span class="numero">Infraction 9</span><br>
+Défaut du SMIG<br>
+<span class="amende">Sanction : Fermeture de l'entreprise jusqu'à régularisation</span>
+</div>
 
-<tr>
-<td>4</td>
-<td>Défaut du règlement intérieur</td>
-<td>20 000 FC</td>
-</tr>
+<div class="infraction">
+<span class="numero">Infraction 10</span><br>
+Travail au-delà de 45 heures par semaine sans paiement des heures supplémentaires<br>
+<span class="amende">Sanction : Article 321</span>
+</div>
 
-<tr>
-<td>5</td>
-<td>Défaut du SMIG</td>
-<td>Fermeture jusqu'à régularisation</td>
-</tr>
+<div class="infraction">
+<span class="numero">Infraction 11</span><br>
+Privation du jour de repos hebdomadaire<br>
+<span class="amende">Sanction : Article 321</span>
+</div>
 
-</table>
+<div class="infraction">
+<span class="numero">Infraction 12</span><br>
+Travail de nuit des enfants et personnes handicapées en violation de la loi<br>
+<span class="amende">Sanction : Article 321</span>
+</div>
 
-<p>
-La base complète des 65 infractions et sanctions sera intégrée progressivement dans InspecteurBot RDC - IGT.
-</p>
+<div class="infraction">
+<span class="numero">Infraction 13</span><br>
+Violation des droits des femmes, enfants et personnes handicapées<br>
+<span class="amende">Sanction : Article 321</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 14</span><br>
+Emploi d'enfants de 15 à 17 ans sans autorisation<br>
+<span class="amende">Sanction : Article 321</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⚖️ Infractions 11 à 20</h2>
+
+<div class="infraction">
+<span class="numero">Infraction 15</span><br>
+Mauvaises conditions d'hygiène et de sécurité<br>
+<span class="amende">Sanction : Mise en demeure</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 16</span><br>
+Non-assurance d'un service médical aux employés<br>
+<span class="amende">Sanction : Article 321</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 17</span><br>
+Violation de la convention collective<br>
+<span class="amende">Amende : 7 500 FC</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 18</span><br>
+Non-assurance de la formation professionnelle via l'INPP<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 19</span><br>
+Recevoir des apprentis sans avoir la qualité requise<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 20</span><br>
+Absence de contrat d'apprentissage écrit conforme<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 21</span><br>
+Absence de contrat d'apprentissage visé par l'ONEM<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 22</span><br>
+Non-rémunération de l'apprenti<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 23</span><br>
+Apprenti n'exécutant pas ses obligations<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
+
+<div class="infraction">
+<span class="numero">Infraction 24</span><br>
+Cessation du contrat d'apprentissage sans information à l'Inspection du Travail et à l'ONEM<br>
+<span class="amende">Amende : 20 000 FC</span>
+</div>
 
 </div>
 ```
+  
