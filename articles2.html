@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recherche d'Articles - InspecteurBot RDC</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#f2f4f7;
+margin:0;
+padding:0;
+}
+
+.header{
+background:#0d47a1;
+color:white;
+padding:25px;
+text-align:center;
+font-size:34px;
+font-weight:bold;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:15px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin-bottom:20px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.12);
+}
+
+.card h2{
+color:#0d47a1;
+font-size:30px;
+border-left:6px solid #ffd600;
+padding-left:12px;
+}
+
+.card p{
+font-size:22px;
+line-height:1.8;
+}
+
+.card li{
+font-size:21px;
+line-height:1.9;
+}
+
+.search-box{
+width:100%;
+padding:18px;
+font-size:22px;
+border-radius:12px;
+border:2px solid #0d47a1;
+box-sizing:border-box;
+}
+
+.article{
+display:none;
+margin-top:15px;
+padding:15px;
+background:#f8f9fa;
+border-left:5px solid #0d47a1;
+border-radius:10px;
+}
+
+.btn{
+display:block;
+max-width:400px;
+margin:30px auto;
+padding:18px;
+background:#ffd600;
+color:black;
+text-decoration:none;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+border-radius:15px;
+}
+
+.footer{
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:20px;
+font-size:18px;
+margin-top:30px;
+}
+
+</style>
+
+<script>
+
+function rechercherArticle(){
+
+let numero=document.getElementById("numero").value;
+
+document.querySelectorAll(".article").forEach(a=>{
+a.style.display="none";
+});
+
+let article=document.getElementById("art"+numero);
+
+if(article){
+article.style.display="block";
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="header">
+🔎 Recherche d'Articles
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Recherche Rapide</h2>
+
+<p>
+Entrez le numéro de l'article du Code du Travail.
+</p>
+
+<input type="number" id="numero" class="search-box" placeholder="Exemple : 1">
+
+<br><br>
+
+<button onclick="rechercherArticle()" class="btn">
+Rechercher
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Articles Disponibles</h2>
+
+<div id="art1" class="article">
+
+<h3>Article 1</h3>
+
+<p>
+Le présent Code est applicable à tous les travailleurs et à tous les employeurs exerçant leur activité professionnelle sur toute l'étendue de la République Démocratique du Congo...
+</p>
+
+</div>
+
+<div id="art2" class="article">
+
+<h3>Article 2</h3>
+
+<p>
+Le travail est pour chacun un droit et un devoir. Le travail forcé ou obligatoire est interdit.
+</p>
+
+</div>
+
+<div id="art3" class="article">
+
+<h3>Article 3</h3>
+
+<p>
+Toutes les pires formes de travail des enfants sont abolies.
+</p>
+
+</div>
+
+<div id="art4" class="article">
+
+<h3>Article 4</h3>
+
+<p>
+Il est institué un Comité National de lutte contre les pires formes de travail des enfants.
+</p>
+
+</div>
+
+<div id="art5" class="article">
+
+<h3>Article 5</h3>
+
+<p>
+Un arrêté interministériel détermine l'organisation et le fonctionnement du Comité National.
+</p>
+
+</div>
+
+<div id="art6" class="article">
+
+<h3>Article 6</h3>
+
+<p>
+La capacité d'une personne d'engager ses services est régie conformément aux dispositions du Code du Travail.
+</p>
+
+</div>
+
+</div>
+
+<a href="code-travail.html" class="btn">
+📖 Retour au Code du Travail
+</a>
+
+<a href="index.html" class="btn">
+⬅ Retour au menu principal
+</a>
+
+</div>
+
+<div class="footer">
+InspecteurBot RDC - IGT © 2026<br>
+Créateur : Inspecteur Pmiller
+</div>
+
+</body>
+</html>
+```
