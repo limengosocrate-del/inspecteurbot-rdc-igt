@@ -733,6 +733,32 @@ Conclusion :
 ....................................
 `;
 
+function genererRapport(){
+
+let entreprise =
+document.getElementById("entreprise").value;
+
+let rapport = `
+RAPPORT OFFICIEL DE CONTRÔLE F01
+
+Entreprise : ${entreprise}
+
+Date : ${new Date().toLocaleDateString()}
+
+Inspecteur : ___________________
+
+Conclusion :
+....................................
+
+....................................
+
+....................................
+`;
+
+let nouvelleFenetre = window.open("", "_blank");
+
+nouvelleFenetre.document.write(`
+<html>
 <head>
 <title>Rapport F01</title>
 
@@ -744,14 +770,13 @@ padding:40px;
 font-size:24px;
 line-height:1.8;
 background:white;
-color:#000;
+color:black;
 }
 
 h1{
 text-align:center;
 font-size:34px;
-color:#0d47a1;
-margin-bottom:30px;
+color:#1565c0;
 }
 
 pre{
@@ -763,24 +788,20 @@ white-space:pre-wrap;
 </style>
 
 </head>
+
 <body>
 
-<h1>
-RAPPORT OFFICIEL DE CONTRÔLE F01
-</h1>
-<body>
- 
-<div>
+<h1>RAPPORT OFFICIEL DE CONTRÔLE F01</h1>
+
 <pre>${rapport}</pre>
-</div>
- 
+
 </body>
- 
 </html>
 `);
+
 nouvelleFenetre.document.close();
 
-  }
+}
 
 </script>
   
