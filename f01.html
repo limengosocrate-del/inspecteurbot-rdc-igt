@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>F01 - Contrôle de la Main-d'Œuvre</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#f2f4f7;
+margin:0;
+padding:0;
+}
+
+.header{
+background:#1565c0;
+color:white;
+text-align:center;
+padding:30px;
+box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+
+.header h1{
+font-size:38px;
+margin:0;
+}
+
+.header p{
+font-size:24px;
+margin-top:10px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.12);
+}
+
+.card h2{
+font-size:30px;
+color:#0d47a1;
+border-bottom:3px solid #ffd100;
+padding-bottom:10px;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+font-size:22px;
+font-weight:bold;
+margin-top:15px;
+margin-bottom:8px;
+}
+
+input, textarea, select{
+width:100%;
+padding:15px;
+font-size:22px;
+border:1px solid #ccc;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+textarea{
+height:150px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table th{
+background:#1565c0;
+color:white;
+padding:15px;
+font-size:20px;
+}
+
+table td{
+border:1px solid #ddd;
+padding:12px;
+font-size:20px;
+}
+
+.btn{
+display:block;
+width:90%;
+max-width:600px;
+margin:15px auto;
+padding:20px;
+border:none;
+border-radius:15px;
+font-size:26px;
+font-weight:bold;
+cursor:pointer;
+color:white;
+background:#1565c0;
+}
+
+.btn-print{
+background:#2e7d32;
+}
+
+.btn-archive{
+background:#d32f2f;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+font-size:20px;
+font-weight:bold;
+color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>📋 F01 - CONTRÔLE DE LA MAIN-D'ŒUVRE</h1>
+
+<p>
+République Démocratique du Congo
+<br>
+Ministère de l'Emploi et Travail
+<br>
+Inspection Générale du Travail
+</p>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🏢 RENSEIGNEMENTS DE L'ENTREPRISE OU ETABLISSEMENT VISITE</h2>
+
+<label>Nom ou Raison Sociale</label>
+<input type="text" id="entreprise">
+
+<label>Adresse Physique</label>
+<input type="text" id="adresse">
+
+<label>Secteur d'activité</label>
+<input type="text" id="secteur">
+
+<label>Siège Social</label>
+<input type="text" id="siege">
+
+<label>Nom du Responsable</label>
+<input type="text" id="responsable">
+
+<label>Personne rencontrée</label>
+<input type="text" id="personne">
+
+<label>Qualité</label>
+<input type="text" id="qualite">
+
+<label>Contact</label>
+<input type="text" id="contact">
+
+<label>Email</label>
+<input type="email" id="email">
+
+<label>CNSS</label>
+<input type="text" id="cnss">
+
+<label>ONEM</label>
+<input type="text" id="onem">
+
+<label>INPP</label>
+<input type="text" id="inpp">
+
+<label>Précédente visite effectuée par</label>
+<input type="text" id="precedente">
+
+<div class="card">
+
+<h2>👥 EFFECTIFS DE TRAVAILLEURS PERMANENTS VENTILÉS PAR SEXE</h2>
+
+<table>
+
+<tr>
+<th>Catégorie</th>
+<th>Hommes</th>
+<th>Femmes</th>
+<th>Total</th>
+</tr>
+
+<tr>
+<td>Nationaux</td>
+<td><input type="number" id="nat_h"></td>
+<td><input type="number" id="nat_f"></td>
+<td><input type="number" id="nat_t"></td>
+</tr>
+
+<tr>
+<td>Expatriés</td>
+<td><input type="number" id="exp_h"></td>
+<td><input type="number" id="exp_f"></td>
+<td><input type="number" id="exp_t"></td>
+</tr>
+
+<tr>
+<td><b>TOTAL</b></td>
+<td><input type="number" id="tot_h"></td>
+<td><input type="number" id="tot_f"></td>
+<td><input type="number" id="tot_t"></td>
+</tr>
+
+<tr>
+<td><b>Ratio H/F</b></td>
+<td colspan="3">
+<input type="text" id="ratio">
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>📊 EFFECTIFS SELON LES CATÉGORIES PROFESSIONNELLES</h2>
+
+<table>
+
+<tr>
+<th>Catégorie</th>
+<th>Hommes</th>
+<th>Femmes</th>
+<th>Total</th>
+</tr>
+
+<tr>
+<td>Cadres</td>
+<td><input type="number" id="cad_h"></td>
+<td><input type="number" id="cad_f"></td>
+<td><input type="number" id="cad_t"></td>
+</tr>
+
+<tr>
+<td>Maîtrise</td>
+<td><input type="number" id="mai_h"></td>
+<td><input type="number" id="mai_f"></td>
+<td><input type="number" id="mai_t"></td>
+</tr>
+
+<tr>
+<td>Classifiés</td>
+<td><input type="number" id="cla_h"></td>
+<td><input type="number" id="cla_f"></td>
+<td><input type="number" id="cla_t"></td>
+</tr>
+
+<tr>
+<td><b>TOTAL</b></td>
+<td><input type="number" id="cat_h"></td>
+<td><input type="number" id="cat_f"></td>
+<td><input type="number" id="cat_t"></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>🧒 EFFECTIFS DES TRAVAILLEURS NON PERMANENTS ET DES ENFANTS EMPLOYÉS</h2>
+
+<table>
+
+<tr>
+<th>Catégorie</th>
+<th>Hommes</th>
+<th>Femmes</th>
+<th>Total</th>
+</tr>
+
+<tr>
+<td>Travailleurs Non Permanents</td>
+<td><input type="number" id="np_h"></td>
+<td><input type="number" id="np_f"></td>
+<td><input type="number" id="np_t"></td>
+</tr>
+
+<tr>
+<td>Enfants Employés</td>
+<td><input type="number" id="enf_h"></td>
+<td><input type="number" id="enf_f"></td>
+<td><input type="number" id="enf_t"></td>
+</tr>
+
+<tr>
+<td><b>TOTAL</b></td>
+<td><input type="number" id="gen_h"></td>
+<td><input type="number" id="gen_f"></td>
+<td><input type="number" id="gen_t"></td>
+</tr>
+
+</table>
+
+<div class="card">
+
+<h2>📂 DOCUMENTS À PRÉSENTER ET VÉRIFIER</h2>
+
+<table>
+
+<tr>
+<th>Document</th>
+<th>Conforme</th>
+<th>Non Conforme</th>
+<th>Observations</th>
+</tr>
+
+<tr>
+<td>Déclaration d'Établissement (Art. 216 CT)</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Règlement d'Entreprise (Art.157 CT)</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Convention Collective (Art.199 CT)</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Horaire de Travail</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Classification Générale des Emplois</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Livre de Paie</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Bilan Social</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Preuves CNSS</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Preuves ONEM</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Preuves INPP</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Déclarations de Mouvement</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Contrats visés ONEM</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Certificats d'Aptitude</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Titres de Congé</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Application du SMIG</td>
+<td><input type="checkbox"></td>
+<td><input type="checkbox"></td>
+<td><input type="text"></td>
+</tr>
+
+</table>
+
+<div class="card">
+
+<h2>⚖️ ANALYSE DE CONFORMITÉ</h2>
+
+<label>Respect du SMIG (21 500 FC)</label>
+<select>
+<option>Conforme</option>
+<option>Non Conforme</option>
+</select>
+
+<label>Affiliation CNSS</label>
+<select>
+<option>Conforme</option>
+<option>Non Conforme</option>
+</select>
+
+<label>Affiliation ONEM</label>
+<select>
+<option>Conforme</option>
+<option>Non Conforme</option>
+</select>
+
+<label>Affiliation INPP</label>
+<select>
+<option>Conforme</option>
+<option>Non Conforme</option>
+</select>
+
+<label>Niveau Général de Conformité</label>
+<select>
+<option>Excellent</option>
+<option>Bon</option>
+<option>Moyen</option>
+<option>Faible</option>
+<option>Critique</option>
+</select>
+
+</div>
+
+<div class="card">
+
+<h2>📝 OBSERVATIONS DE L'INSPECTEUR OU CONTRÔLEUR DU TRAVAIL</h2>
+
+<textarea
+style="
+width:100%;
+height:250px;
+font-size:22px;
+padding:15px;
+border-radius:12px;
+"></textarea>
+
+</div>
+
+<div class="card">
+
+<h2>📌 CONCLUSION DE LA VISITE</h2>
+
+<textarea
+style="
+width:100%;
+height:250px;
+font-size:22px;
+padding:15px;
+border-radius:12px;
+"></textarea>
+
+</div>
+
+<div class="card">
+
+<h2>⚠️ DÉCISIONS ADMINISTRATIVES</h2>
+
+<label><input type="checkbox"> Observation verbale</label><br><br>
+
+<label><input type="checkbox"> Lettre d'observation</label><br><br>
+
+<label><input type="checkbox"> Mise en demeure</label><br><br>
+
+<label><input type="checkbox"> Procès-verbal d'infraction</label><br><br>
+
+<label><input type="checkbox"> Suspension des travaux dangereux</label><br><br>
+
+<label><input type="checkbox"> Transmission du dossier à l'autorité compétente</label><br><br>
+
+<label><input type="checkbox"> Proposition de poursuites judiciaires</label>
+
+<div class="card">
+
+<h2>🏢 RÉSERVE À L'ADMINISTRATION DE L'INSPECTION DU TRAVAIL</h2>
+
+<label>Observations du Chef d'Antenne</label>
+
+<textarea
+style="
+width:100%;
+height:180px;
+font-size:22px;
+padding:15px;
+border-radius:12px;
+"></textarea>
+
+<br><br>
+
+<label>Observations du Directeur Provincial</label>
+
+<textarea
+style="
+width:100%;
+height:180px;
+font-size:22px;
+padding:15px;
+border-radius:12px;
+"></textarea>
+
+</div>
+
+<div class="card">
+
+<h2>📊 RÉSERVE À L'INSPECTEUR GÉNÉRAL DU TRAVAIL</h2>
+
+<label>Analyse et Synthèse</label>
+
+<textarea
+style="
+width:100%;
+height:220px;
+font-size:22px;
+padding:15px;
+border-radius:12px;
+"></textarea>
+
+<br><br>
+
+<label>Décision</label>
+
+<select
+style="
+width:100%;
+padding:15px;
+font-size:22px;
+border-radius:12px;
+">
+
+<option>Visa</option>
+
+<option>Mise en demeure</option>
+
+<option>Procès-verbal</option>
+
+<option>Classement</option>
+
+<option>Transmission au Parquet</option>
+
+<option>Mission complémentaire</option>
+
+</select>
+
+</div>
+
+<div class="card">
+
+<h2>✍️ VALIDATION DU CONTRÔLE</h2>
+
+<label>Nom de l'Inspecteur ou Contrôleur du Travail</label>
+
+<input type="text">
+
+<label>Date de la Visite</label>
+
+<input type="date">
+
+<label>Lieu</label>
+
+<input type="text">
+
+<label>Signature de l'Employeur ou de son Préposé</label>
+
+<input type="text">
+
+<label>Signature de l'Inspecteur ou Contrôleur du Travail</label>
+
+<input type="text">
+
+</div>
+
+<div class="card">
+
+<h2>⚙️ ACTIONS</h2>
+
+<button
+class="btn"
+onclick="enregistrerFiche()">
+
+💾 ENREGISTRER LA FICHE
+
+</button>
+
+<button
+class="btn btn-print"
+onclick="window.print()">
+
+🖨️ IMPRIMER LA FICHE
+
+</button>
+
+<button
+class="btn btn-archive"
+onclick="alert('Fiche archivée avec succès');">
+
+📁 ARCHIVER LA FICHE
+
+</button>
+
+<button
+class="btn"
+onclick="genererRapport()">
+
+📄 GÉNÉRER LE RAPPORT
+
+</button>
+
+</div>
+
+<script>
+
+function enregistrerFiche(){
+
+alert(
+'Fiche F01 enregistrée avec succès dans les archives locales.'
+);
+
+}
+
+function genererRapport(){
+
+alert(
+'Module de génération du rapport F01 prêt.'
+);
+
+}
+
+<script>
+
+function enregistrerFiche(){
+
+let fiche = {
+
+entreprise:document.getElementById("entreprise").value,
+
+date:new Date().toLocaleDateString(),
+
+heure:new Date().toLocaleTimeString()
+
+};
+
+let archives =
+JSON.parse(localStorage.getItem("archivesF01")) || [];
+
+archives.push(fiche);
+
+localStorage.setItem(
+"archivesF01",
+JSON.stringify(archives)
+);
+
+alert("Fiche enregistrée dans les Archives.");
+
+}
+
+function genererRapport(){
+
+alert("Module Rapport F01 prêt.");
+
+}
+
+</script>
+
+<a href="fiches-controle.html" class="btn">
+
+⬅ RETOUR AUX FICHES DE CONTRÔLE
+
+</a>
+
+</div>
+
+<div class="footer">
+
+InspecteurBot RDC - IGT © 2026
+
+<br><br>
+
+Créateur : Inspecteur Pmiller
+
+<br><br>
+
+L'assistant numérique des Inspecteurs du Travail de la République Démocratique du Congo
+
+</div>
+
+</body>
+
+</html>
+```
+  
