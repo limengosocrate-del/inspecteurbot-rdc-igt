@@ -274,32 +274,23 @@ Cette section permet de conserver automatiquement tous les formulaires, fiches d
 
 input,
 select,
-textarea{
-width:100%;
-padding:18px;
-font-size:22px;
-margin-top:10px;
-margin-bottom:20px;
-border:2px solid #ddd;
-border-radius:12px;
-box-sizing:border-box;
-}
+<div class="card">
 
-.save-btn{
-width:100%;
-background:#2e7d32;
-color:white;
-font-size:24px;
-font-weight:bold;
-padding:20px;
-border:none;
-border-radius:14px;
-cursor:pointer;
-}
+<h2>📂 Base Centrale des Archives IGT</h2>
 
-.save-btn:hover{
-background:#1b5e20;
-}
+<p>
+Toutes les fiches de contrôle enregistrées apparaîtront automatiquement ici.
+</p>
+
+<div id="listeArchives">
+
+<p>Aucun document archivé.</p>
+
+</div>
+
+</div>
+
+<style>
 
 .archive-item{
 background:#f5f7fa;
@@ -313,6 +304,46 @@ font-size:20px;
 </style>
 
 <script>
+
+chargerArchives();
+
+function chargerArchives(){
+
+let archives =
+JSON.parse(localStorage.getItem("archivesIGT")) || [];
+
+let liste =
+document.getElementById("listeArchives");
+
+liste.innerHTML = "";
+
+if(archives.length===0){
+liste.innerHTML="<p>Aucun document archivé.</p>";
+return;
+}
+
+archives.forEach(function(doc){
+
+liste.innerHTML += `
+<div class="archive-item">
+
+<b>${doc.type || "Fiche"}</b><br><br>
+
+🏢 ${doc.entreprise || ""}<br>
+
+📅 ${doc.date || ""}<br>
+
+👨‍⚖️ ${doc.inspecteur || ""}
+
+</div>
+`;
+
+});
+
+}
+
+</script>
+
 
 chargerArchives();
 
