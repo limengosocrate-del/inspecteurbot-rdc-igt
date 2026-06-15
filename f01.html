@@ -683,13 +683,9 @@ alert(
 function enregistrerFiche(){
 
 let fiche = {
-
-entreprise:document.getElementById("entreprise").value,
-
-date:new Date().toLocaleDateString(),
-
-heure:new Date().toLocaleTimeString()
-
+entreprise: document.getElementById("entreprise").value,
+date: new Date().toLocaleDateString(),
+heure: new Date().toLocaleTimeString()
 };
 
 let archives =
@@ -702,18 +698,44 @@ localStorage.setItem(
 JSON.stringify(archives)
 );
 
-alert("Fiche enregistrée dans les Archives.");
+alert("✅ Fiche enregistrée dans les Archives.");
 
 }
 
 function genererRapport(){
 
-alert("Module Rapport F01 prêt.");
+let entreprise =
+document.getElementById("entreprise").value;
+
+let rapport = `
+RAPPORT DE CONTRÔLE F01
+
+Entreprise : ${entreprise}
+
+Date : ${new Date().toLocaleDateString()}
+
+Inspecteur : ___________________
+
+Conclusion :
+....................................
+
+....................................
+
+....................................
+`;
+
+let nouvelleFenetre =
+window.open("", "_blank");
+
+nouvelleFenetre.document.write(
+"<pre style='font-size:22px'>" +
+rapport +
+"</pre>"
+);
 
 }
 
 </script>
-
 <a href="fiches-controle.html" class="btn">
 
 ⬅ RETOUR AUX FICHES DE CONTRÔLE
