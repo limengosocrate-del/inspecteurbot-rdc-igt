@@ -218,44 +218,6 @@ Elles permettent d'assurer le suivi des entreprises, d'évaluer le respect de la
 Une bonne gestion des archives contribue à la transparence, à la bonne gouvernance et à l'efficacité du système national d'inspection du travail.
 </p>
 
-<div class="card">
-
-<h2>💾 Archives Numériques Intelligentes</h2>
-
-<p>
-Cette section permet de conserver automatiquement tous les formulaires, fiches de contrôle, procès-verbaux, rapports et documents administratifs générés par InspecteurBot RDC.
-</p>
-
-<form id="archiveForm">
-
-<label><b>Nom de l'entreprise :</b></label>
-<input type="text" id="entreprise" placeholder="Entreprise contrôlée">
-
-<label><b>Date du contrôle :</b></label>
-<input type="date" id="dateControle">
-
-<label><b>Inspecteur :</b></label>
-<input type="text" id="inspecteur" placeholder="Nom de l'inspecteur">
-
-<label><b>Type de document :</b></label>
-<select id="typeDoc">
-<option>Fiche F01</option>
-<option>Fiche F02</option>
-<option>Fiche F03</option>
-<option>Rapport</option>
-<option>Procès-verbal</option>
-<option>Mise en demeure</option>
-</select>
-
-<label><b>Observations :</b></label>
-<textarea id="observations" rows="5"></textarea>
-
-<button type="button" onclick="enregistrerArchive()" class="save-btn">
-💾 Enregistrer dans les Archives
-</button>
-
-</form>
-
 </div>
 
 <div class="card">
@@ -340,54 +302,7 @@ liste.innerHTML += `
 
 });
 
-}
-
 </script>
-
-
-chargerArchives();
-
-function enregistrerArchive(){
-
-let entreprise=document.getElementById("entreprise").value;
-let date=document.getElementById("dateControle").value;
-let inspecteur=document.getElementById("inspecteur").value;
-let type=document.getElementById("typeDoc").value;
-let observations=document.getElementById("observations").value;
-
-let archives=
-JSON.parse(localStorage.getItem("archivesIGT")) || [];
-
-archives.push({
-entreprise,
-date,
-inspecteur,
-type,
-observations
-});
-
-localStorage.setItem(
-"archivesIGT",
-JSON.stringify(archives)
-);
-
-alert("Document archivé avec succès.");
-
-chargerArchives();
-
-}
-
-function chargerArchives(){
-
-let archives=
-JSON.parse(localStorage.getItem("archivesIGT")) || [];
-
-let liste=
-document.getElementById("listeArchives");
-
-liste.innerHTML="";
-
-archives.forEach(function(doc){
 
 liste.innerHTML += `
 <div class="archive-item">
