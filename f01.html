@@ -93,7 +93,19 @@ table td{
 border:1px solid #ddd;
 padding:12px;
 font-size:20px;
+text-align:center;
 }
+
+table td input[type="checkbox"]{
+width:25px;
+height:25px;
+cursor:pointer;
+}
+
+table td input[type="text"]{
+width:100%;
+font-size:18px;
+  }
 
 .btn{
 display:block;
@@ -189,7 +201,9 @@ Inspection Générale du Travail
 
 <label>Précédente visite effectuée par</label>
 <input type="text" id="precedente">
-
+  
+</div>
+  
 <div class="card">
 
 <h2>👥 EFFECTIFS DE TRAVAILLEURS PERMANENTS VENTILÉS PAR SEXE</h2>
@@ -315,6 +329,8 @@ Inspection Générale du Travail
 </tr>
 
 </table>
+
+</div>
 
 <div class="card">
 
@@ -523,6 +539,8 @@ border-radius:12px;
 
 <label><input type="checkbox"> Proposition de poursuites judiciaires</label>
 
+</div>
+  
 <div class="card">
 
 <h2>🏢 RÉSERVE À L'ADMINISTRATION DE L'INSPECTION DU TRAVAIL</h2>
@@ -644,7 +662,7 @@ onclick="window.print()">
 
 <button
 class="btn btn-archive"
-onclick="alert('Fiche archivée avec succès');">
+onclick="enregistrerFiche()"
 
 📁 ARCHIVER LA FICHE
 
@@ -713,11 +731,10 @@ nouvelleFenetre.document.write(
 "<pre style='font-size:22px'>" +
 rapport +
 "</pre>"
-);
 
-}
 
 </script>
+  
 <a href="fiches-controle.html" class="btn">
 
 ⬅ RETOUR AUX FICHES DE CONTRÔLE
