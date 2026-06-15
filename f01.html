@@ -72,6 +72,12 @@ border-radius:10px;
 box-sizing:border-box;
 }
 
+input[type="checkbox"]{
+width:auto;
+padding:0;
+border:none;
+ } 
+  
 textarea{
 height:150px;
 }
@@ -729,11 +735,24 @@ Conclusion :
 let nouvelleFenetre =
 window.open("", "_blank");
 
-nouvelleFenetre.document.write(
-"<pre style='font-size:22px'>" +
-rapport +
-"</pre>"
-);
+nouvelleFenetre.document.write(`
+<html>
+<head>
+<title>Rapport F01</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+padding:30px;
+font-size:18px;
+}
+</style>
+</head>
+<body>
+<pre>${rapport}</pre>
+</body>
+</html>
+`);
+nouvelleFenetre.document.close();
 
   }
 
