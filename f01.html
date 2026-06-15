@@ -709,7 +709,7 @@ alert("✅ Fiche F01 enregistrée dans les Archives.");
 
 }
 
-function enregistrerFiche(){
+function genererRapport(){
 
 alert("F01 exécuté");
 
@@ -733,24 +733,49 @@ Conclusion :
 ....................................
 `;
 
-let nouvelleFenetre =
-window.open("", "_blank");
-
-nouvelleFenetre.document.write(`
-<html>
 <head>
 <title>Rapport F01</title>
+
 <style>
+
 body{
 font-family:Arial,sans-serif;
-padding:30px;
-font-size:18px;
+padding:40px;
+font-size:24px;
+line-height:1.8;
+background:white;
+color:#000;
 }
+
+h1{
+text-align:center;
+font-size:34px;
+color:#0d47a1;
+margin-bottom:30px;
+}
+
+pre{
+font-family:Arial,sans-serif;
+font-size:24px;
+white-space:pre-wrap;
+}
+
 </style>
+
 </head>
 <body>
+
+<h1>
+RAPPORT OFFICIEL DE CONTRÔLE F01
+</h1>
+<body>
+ 
+<div>
 <pre>${rapport}</pre>
+</div>
+ 
 </body>
+ 
 </html>
 `);
 nouvelleFenetre.document.close();
