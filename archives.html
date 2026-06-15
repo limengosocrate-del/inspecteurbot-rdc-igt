@@ -234,26 +234,6 @@ Une bonne gestion des archives contribue à la transparence, à la bonne gouvern
 
 <style>
 
-input,
-select,
-<div class="card">
-
-<h2>📂 Base Centrale des Archives IGT</h2>
-
-<p>
-Toutes les fiches de contrôle enregistrées apparaîtront automatiquement ici.
-</p>
-
-<div id="listeArchives">
-
-<p>Aucun document archivé.</p>
-
-</div>
-
-</div>
-
-<style>
-
 .archive-item{
 background:#f5f7fa;
 padding:20px;
@@ -296,26 +276,6 @@ liste.innerHTML += `
 📅 ${doc.date || ""}<br>
 
 👨‍⚖️ ${doc.inspecteur || ""}
-
-</div>
-`;
-
-});
-
-</script>
-
-liste.innerHTML += `
-<div class="archive-item">
-
-<b>${doc.type}</b><br><br>
-
-🏢 ${doc.entreprise}<br>
-
-📅 ${doc.date}<br>
-
-👨‍⚖️ ${doc.inspecteur}<br>
-
-📝 ${doc.observations}
 
 </div>
 `;
