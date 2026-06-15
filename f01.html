@@ -689,24 +689,24 @@ onclick="genererRapport()">
 <script>
 
 function enregistrerFiche(){
-
-let fiche = {
-entreprise: document.getElementById("entreprise").value,
-date: new Date().toLocaleDateString(),
-heure: new Date().toLocaleTimeString()
-};
+function enregistrerFiche(){
 
 let archives =
-JSON.parse(localStorage.getItem("archivesF01")) || [];
+JSON.parse(localStorage.getItem("archivesIGT")) || [];
 
-archives.push(fiche);
+archives.push({
+type:"F01 - Main-d'œuvre",
+entreprise: document.getElementById("entreprise").value,
+date: new Date().toLocaleDateString(),
+inspecteur:"Inspecteur du Travail"
+});
 
 localStorage.setItem(
-"archivesF01",
+"archivesIGT",
 JSON.stringify(archives)
 );
 
-alert("✅ Fiche enregistrée dans les Archives.");
+alert("✅ Fiche F01 enregistrée dans les Archives.");
 
 }
 
