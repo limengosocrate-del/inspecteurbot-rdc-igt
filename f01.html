@@ -884,6 +884,14 @@ id="dateVisite">
 
 <button
 class="btn"
+onclick="sauvegarderBrouillon()">
+
+💾 ENREGISTRER COMME BROUILLON
+
+ </button>
+
+<button
+class="btn"
 onclick="enregistrerFiche()">
 
 💾 ENREGISTRER LA FICHE
@@ -899,8 +907,8 @@ onclick="window.print()">
 </button>
 
 <button
-class="btn btn-archive"
-onclick="enregistrerFiche()">
+class="btn"
+onclick="sauvegarderBrouillon()">
 
 📁 ARCHIVER LA FICHE
 
@@ -918,12 +926,92 @@ onclick="genererRapport()">
 
 <script>
 
+function sauvegarderBrouillon(){
+
+let brouillon={
+
+entreprise:
+document.getElementById("entreprise").value,
+
+province:
+document.getElementById("province").value,
+
+ville:
+document.getElementById("ville").value,
+
+responsable:
+document.getElementById("responsable").value
+
+};
+
+localStorage.setItem(
+"brouillonF01",
+JSON.stringify(brouillon)
+);
+
+alert("💾 Brouillon enregistré.");
+
+}
+
 function enregistrerFiche(){
 
 let archives =
 JSON.parse(localStorage.getItem("archivesIGT")) || [];
 
 archives.push({
+
+numero:"F01-"+Date.now(),
+
+type:"F01 - Contrôle Main-d'œuvre",
+
+entreprise:
+document.getElementById("entreprise").value,
+
+province:
+document.getElementById("province").value,
+
+ville:
+document.getElementById("ville").value,
+
+commune:
+document.getElementById("commune").value,
+
+secteur:
+document.getElementById("secteur").value,
+
+responsable:
+document.getElementById("responsable").value,
+
+contactEntreprise:
+document.getElementById("contact").value,
+
+email:
+document.getElementById("email").value,
+
+cnss:
+document.getElementById("cnss").value,
+
+onem:
+document.getElementById("onem").value,
+
+inpp:
+document.getElementById("inpp").value,
+
+decision:
+document.getElementById("decisionIGT").value,
+
+dateVisite:
+document.getElementById("dateVisite").value,
+
+dateArchive:
+new Date().toLocaleDateString(),
+
+inspecteur:
+"Inspecteur du Travail",
+
+contactInspecteur:"+243 __________"
+
+});
 
 type:"F01 - Contrôle Main-d'œuvre",
 
@@ -1115,9 +1203,9 @@ nouvelleFenetre.document.write(`
 
 body{
 font-family:Arial,sans-serif;
-padding:60px;
-font-size:26px;
-line-height:2;
+padding:40px;
+font-size:34px;
+line-height:2.2;
 color:#000;
 }
 
@@ -1130,8 +1218,8 @@ margin-bottom:30px;
 pre{
 white-space:pre-wrap;
 font-family:Arial,sans-serif;
-font-size:26px;
-line-height:2;
+font-size:34px;
+line-height:2.2;
 }
 
 </style>
@@ -1141,6 +1229,27 @@ line-height:2;
 <body>
 
 <h1>RAPPORT OFFICIEL DE CONTRÔLE F01</h1>
+
+<center>
+
+<button
+onclick="window.print()"
+style="
+padding:15px 30px;
+font-size:24px;
+background:#1565c0;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+margin-bottom:20px;
+">
+
+🖨️ IMPRIMER LE RAPPORT
+
+</button>
+
+</center>
 
 <pre>${rapport}</pre>
 
