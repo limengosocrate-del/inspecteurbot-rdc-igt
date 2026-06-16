@@ -979,7 +979,7 @@ document.getElementById("decisionIGT").value
 
 });
 
-localStorage.setItem(.
+localStorage.setItem(
 "archivesIGT",
 JSON.stringify(archives)
 );
@@ -1251,6 +1251,26 @@ el.value="";
 
 document.querySelectorAll("select").forEach(el=>{
 el.selectedIndex=0;
+});
+
+}
+
+function viderFormulaire(){
+
+document.querySelectorAll("input").forEach(input=>{
+if(input.type==="checkbox"){
+input.checked=false;
+}else{
+input.value="";
+}
+});
+
+document.querySelectorAll("textarea").forEach(textarea=>{
+textarea.value="";
+});
+
+document.querySelectorAll("select").forEach(select=>{
+select.selectedIndex=0;
 });
 
  }
