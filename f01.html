@@ -1175,19 +1175,34 @@ font-size:42px;
 font-weight:bold;
 ">
 
-<script>
+RAPPORT OFFICIEL DE CONTRÔLE F01
 
-function viderFormulaire(){
-document.querySelectorAll("input, textarea, select").forEach(el=>{
-if(el.type==="checkbox"){
-el.checked=false;
-}else{
-el.value="";
-}
-});
-}
+</div>
 
-</script>
+<div style="
+font-size:24px;
+font-weight:bold;
+">
+Contrôle de la Main-d'Œuvre Nationale et Étrangère
+</div>
+
+</center>
+
+<br><br>
+
+<pre>${rapport}</pre>
+
+</body>
+
+</html>
+`);
+
+nouvelleFenetre.document.close();
+
+viderFormulaire();
+
+ }
+
 </body>
 </html>
   
