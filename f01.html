@@ -955,8 +955,7 @@ personne:
 document.getElementById("personne").value,
 
 contact:
-document.getElementById("contact").value = "+243 ";
-
+document.getElementById("contact").value,
 email:
 document.getElementById("email").value,
 
@@ -980,7 +979,7 @@ document.getElementById("decisionIGT").value
 
 });
 
-localStorage.setItem(
+localStorage.setItem(.
 "archivesIGT",
 JSON.stringify(archives)
 );
@@ -1147,8 +1146,6 @@ line-height:2;
 
 <pre>${rapport}</pre>
 
-<body>
-
 <center>
 
 <div style="
@@ -1236,7 +1233,39 @@ select.selectedIndex=0;
 });
 
  }
+
+function viderFormulaire(){
+
+document.querySelectorAll("input").forEach(el=>{
+if(
+el.type!=="button" &&
+el.type!=="submit"
+){
+el.value="";
+}
+});
+
+document.querySelectorAll("textarea").forEach(el=>{
+el.value="";
+});
+
+document.querySelectorAll("select").forEach(el=>{
+el.selectedIndex=0;
+});
+
+ }
+ 
 </script>
+ `);
+
+nouvelleFenetre.document.close();
+
+}
+
+</script>
+
+</body>
+</html>
   
 <a href="fiches-controle.html" class="btn">
 
