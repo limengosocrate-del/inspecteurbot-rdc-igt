@@ -986,8 +986,6 @@ JSON.stringify(archives)
 
 alert("✅ Fiche F01 enregistrée dans les Archives.");
 
-viderFormulaire();
- 
 }
  
 function genererRapport(){
@@ -1176,6 +1174,9 @@ border:2px solid black;
 font-size:42px;
 font-weight:bold;
 ">
+</script>
+</body>
+</html>
 
 RAPPORT OFFICIEL DE CONTRÔLE F01
 
@@ -1272,8 +1273,17 @@ textarea.value="";
 document.querySelectorAll("select").forEach(select=>{
 select.selectedIndex=0;
 });
+}
 
- }
+function viderFormulaire(){
+document.querySelectorAll("input, textarea, select").forEach(el=>{
+if(el.type==="checkbox"){
+el.checked=false;
+}else{
+el.value="";
+}
+});
+}
  
 </script>
  `);
