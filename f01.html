@@ -1174,106 +1174,8 @@ border:2px solid black;
 font-size:42px;
 font-weight:bold;
 ">
-</script>
-</body>
-</html>
 
-RAPPORT OFFICIEL DE CONTRÔLE F01
-
-</div>
-
-<div style="
-font-size:24px;
-font-weight:bold;
-">
-</div>
-
-</center>
-
-</body>
-
-</html>
-`);
-
-Contrôle de la Main-d'Œuvre Nationale et Étrangère
-
-</div>
-
-</center>
-
-<br><br>
-
-<pre>${rapport}</pre>
-
-</body>
-
-</html>
-
-`);
-
-nouvelleFenetre.document.close();
-
-viderFormulaire();
-
-}
-
-function viderFormulaire(){
-
-document.querySelectorAll("input, textarea").forEach(function(champ){
-
-if(champ.type==="checkbox"){
-champ.checked=false;
-}else{
-champ.value="";
-}
-
-});
-
-document.querySelectorAll("select").forEach(function(select){
-select.selectedIndex=0;
-});
-
- }
-
-function viderFormulaire(){
-
-document.querySelectorAll("input").forEach(el=>{
-if(
-el.type!=="button" &&
-el.type!=="submit"
-){
-el.value="";
-}
-});
-
-document.querySelectorAll("textarea").forEach(el=>{
-el.value="";
-});
-
-document.querySelectorAll("select").forEach(el=>{
-el.selectedIndex=0;
-});
-
-}
-
-function viderFormulaire(){
-
-document.querySelectorAll("input").forEach(input=>{
-if(input.type==="checkbox"){
-input.checked=false;
-}else{
-input.value="";
-}
-});
-
-document.querySelectorAll("textarea").forEach(textarea=>{
-textarea.value="";
-});
-
-document.querySelectorAll("select").forEach(select=>{
-select.selectedIndex=0;
-});
-}
+<script>
 
 function viderFormulaire(){
 document.querySelectorAll("input, textarea, select").forEach(el=>{
@@ -1284,16 +1186,8 @@ el.value="";
 }
 });
 }
- 
-</script>
- `);
-
-nouvelleFenetre.document.close();
-
-}
 
 </script>
-
 </body>
 </html>
   
@@ -1306,21 +1200,22 @@ nouvelleFenetre.document.close();
 </div>
 
 <div class="footer">
-
-InspecteurBot RDC - IGT © 2026
-
-<br><br>
-
-Créateur : Inspecteur Pmiller
-
-<br><br>
-
-L'assistant numérique des Inspecteurs du Travail de la République Démocratique du Congo
-
+...
 </div>
 
-</body>
+<script>
 
+function viderFormulaire(){
+document.querySelectorAll("input, textarea, select").forEach(el=>{
+if(el.type==="checkbox"){
+el.checked=false;
+}else{
+el.value="";
+}
+});
+}
+
+</script>
+
+</body>
 </html>
-```
-  
