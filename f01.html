@@ -888,7 +888,7 @@ onclick="sauvegarderBrouillon()">
 
 💾 ENREGISTRER COMME BROUILLON
 
- </button>
+</button>
 
 <button
 class="btn"
@@ -907,13 +907,13 @@ onclick="window.print()">
 </button>
 
 <button
-class="btn"
-onclick="sauvegarderBrouillon()">
+class="btn btn-archive"
+onclick="enregistrerFiche()">
 
 📁 ARCHIVER LA FICHE
 
 </button>
-
+ 
 <button
 class="btn"
 onclick="genererRapport()">
@@ -1052,18 +1052,54 @@ document.getElementById("cnss").value,
 
 onem:
 document.getElementById("onem").value,
+function enregistrerFiche(){
 
-inpp:
-document.getElementById("inpp").value,
+let archives =
+JSON.parse(localStorage.getItem("archivesIGT")) || [];
 
-date:
-new Date().toLocaleDateString(),
+archives.push({
 
-inspecteur:
-"Inspecteur du Travail",
+numero:"F01-"+Date.now(),
 
-decision:
-document.getElementById("decisionIGT").value
+type:"F01 - Contrôle Main-d'œuvre",
+
+entreprise:document.getElementById("entreprise").value,
+
+adresse:document.getElementById("adresse").value,
+
+province:document.getElementById("province").value,
+
+ville:document.getElementById("ville").value,
+
+commune:document.getElementById("commune").value,
+
+secteur:document.getElementById("secteur").value,
+
+siege:document.getElementById("siege").value,
+
+responsable:document.getElementById("responsable").value,
+
+personne:document.getElementById("personne").value,
+
+contactEntreprise:document.getElementById("contact").value,
+
+email:document.getElementById("email").value,
+
+cnss:document.getElementById("cnss").value,
+
+onem:document.getElementById("onem").value,
+
+inpp:document.getElementById("inpp").value,
+
+decision:document.getElementById("decisionIGT").value,
+
+dateVisite:document.getElementById("dateVisite").value,
+
+dateArchive:new Date().toLocaleDateString(),
+
+inspecteur:"Inspecteur du Travail",
+
+contactInspecteur:"+243 __________"
 
 });
 
@@ -1250,10 +1286,6 @@ margin-bottom:20px;
 </button>
 
 </center>
-
-<pre>${rapport}</pre>
-
-<center>
 
 <div style="
 font-size:30px;
