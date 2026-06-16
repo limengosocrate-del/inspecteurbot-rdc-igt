@@ -15,141 +15,350 @@ margin:0;
 padding:0;
 }
 
-.header{
-background:#1565c0;
-color:white;
-text-align:center;
-padding:30px;
-box-shadow:0 4px 15px rgba(0,0,0,0.25);
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>InspecteurBot RDC • F01</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<style>
+
+:root{
+
+--bleu:#0D47A1;
+
+--bleu2:#1565C0;
+
+--jaune:#FFD600;
+
+--vert:#2E7D32;
+
+--rouge:#D32F2F;
+
+--gris:#F4F6FA;
+
+--card:#FFFFFF;
+
+--ombre:0 8px 30px rgba(0,0,0,.12);
+
+--radius:22px;
+
 }
 
-.header h1{
-font-size:38px;
+*{
+
 margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Poppins,sans-serif;
+
 }
 
-.header p{
-font-size:24px;
-margin-top:10px;
+body{
+
+background:var(--gris);
+
+color:#222;
+
+padding-bottom:100px;
+
+}
+
+.topbar{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+background:linear-gradient(90deg,var(--bleu),var(--bleu2));
+
+padding:18px;
+
+color:white;
+
+box-shadow:var(--ombre);
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+.slogan{
+
+font-size:14px;
+
+opacity:.9;
+
+margin-top:5px;
+
 }
 
 .container{
-max-width:1100px;
+
+max-width:1200px;
+
 margin:auto;
-padding:20px;
+
+padding:18px;
+
 }
 
 .card{
+
 background:white;
-padding:30px;
-margin-bottom:25px;
-border-radius:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.12);
+
+border-radius:var(--radius);
+
+padding:22px;
+
+margin-bottom:22px;
+
+box-shadow:var(--ombre);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-2px);
+
 }
 
 .card h2{
-font-size:30px;
-color:#0d47a1;
-border-bottom:3px solid #ffd100;
+
+font-size:24px;
+
+color:var(--bleu);
+
+margin-bottom:18px;
+
 padding-bottom:10px;
-margin-bottom:20px;
+
+border-bottom:4px solid var(--jaune);
+
 }
 
 label{
+
 display:block;
-font-size:22px;
-font-weight:bold;
+
+font-weight:600;
+
 margin-top:15px;
-margin-bottom:8px;
+
+margin-bottom:6px;
+
 }
 
-input, textarea, select{
+input,
+textarea,
+select{
+
 width:100%;
+
 padding:15px;
-font-size:22px;
-border:1px solid #ccc;
-border-radius:10px;
-box-sizing:border-box;
-}
 
-input[type="checkbox"]{
-width:auto;
-padding:0;
-border:none;
- } 
-  
-textarea{
-height:150px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-}
-
-table th{
-background:#1565c0;
-color:white;
-padding:15px;
-font-size:20px;
-}
-
-table td{
-border:1px solid #ddd;
-padding:12px;
-font-size:20px;
-text-align:center;
-}
-
-table td input[type="checkbox"]{
-width:25px;
-height:25px;
-cursor:pointer;
-}
-
-table td input[type="text"]{
-width:100%;
 font-size:18px;
-  }
+
+border-radius:15px;
+
+border:1px solid #d9d9d9;
+
+outline:none;
+
+transition:.25s;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+border-color:var(--bleu);
+
+box-shadow:0 0 10px rgba(21,101,192,.25);
+
+}
 
 .btn{
-display:block;
-width:90%;
-max-width:600px;
-margin:15px auto;
-padding:20px;
+
+width:100%;
+
+padding:18px;
+
 border:none;
-border-radius:15px;
-font-size:26px;
-font-weight:bold;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:700;
+
 cursor:pointer;
+
+margin-top:15px;
+
 color:white;
-background:#1565c0;
+
+background:linear-gradient(90deg,var(--bleu),var(--bleu2));
+
+transition:.3s;
+
 }
 
-.btn-print{
-background:#2e7d32;
+.btn:hover{
+
+transform:scale(1.02);
+
 }
 
-.btn-archive{
-background:#d32f2f;
+.btn-success{
+
+background:linear-gradient(90deg,#2E7D32,#43A047);
+
+}
+
+.btn-danger{
+
+background:linear-gradient(90deg,#C62828,#E53935);
+
 }
 
 .footer{
-text-align:center;
+
 padding:30px;
-font-size:20px;
-font-weight:bold;
+
+text-align:center;
+
+font-size:14px;
+
 color:#666;
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="header">
+<div class="topbar">
+
+<div class="logo">
+
+🏛️ INSPECTEURBOT RDC
+
+</div>
+
+<div class="slogan">
+
+Inspection Générale du Travail
+
+Ministère de l'Emploi et du Travail
+
+République Démocratique du Congo
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<div style="text-align:center;">
+
+<h1 style="
+font-size:34px;
+color:#0D47A1;
+margin-bottom:10px;">
+
+📋 FICHE F01
+
+</h1>
+
+<p style="
+font-size:20px;
+font-weight:600;">
+
+Contrôle de la Main-d'Œuvre
+
+</p>
+
+<hr style="
+margin:25px 0;
+border:none;
+height:3px;
+background:#FFD600;">
+
+</div>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;">
+
+<div>
+
+<label>Numéro de contrôle</label>
+
+<input
+id="numeroControle"
+readonly>
+
+</div>
+
+<div>
+
+<label>Date</label>
+
+<input
+type="date"
+id="dateControle">
+
+</div>
+
+<div>
+
+<label>Heure</label>
+
+<input
+type="time"
+id="heureControle">
+
+</div>
+
+<div>
+
+<label>Province</label>
+
+<input
+id="provinceControle">
+
+</div>
+
+</div>
+
+</div>
 
 <h1>📋 F01 - CONTRÔLE DE LA MAIN-D'ŒUVRE</h1>
 
@@ -880,6 +1089,29 @@ id="dateVisite">
 
 <div class="card">
 
+ <h3>✍ Signature de l'Inspecteur</h3>
+
+<div class="card">
+
+<canvas
+id="signature"
+width="350"
+height="170"
+style="
+border:2px solid #000;
+border-radius:8px;
+background:white;
+touch-action:none;">
+</canvas>
+
+<br><br>
+
+<button type="button" onclick="effacerSignature()" class="btn">
+EFFACER LA SIGNATURE
+</button>
+
+</div>
+
 <h2>⚙️ ACTIONS</h2>
 
 <button
@@ -923,6 +1155,8 @@ onclick="genererRapport()">
 </button>
 
 </div>
+
+}
 
 <script>
 
@@ -1150,6 +1384,133 @@ Créateur : Inspecteur Pmiller
 <br><br>
 L'assistant numérique des Inspecteurs du Travail de la République Démocratique du Congo
 </div>
+
+<script>
+
+const maintenant = new Date();
+
+const numero =
+"F01-" +
+maintenant.getFullYear() +
+String(maintenant.getMonth()+1).padStart(2,"0") +
+String(maintenant.getDate()).padStart(2,"0") +
+"-" +
+Math.floor(Math.random()*9000+1000);
+
+document.getElementById("numeroControle").value = numero;
+
+document.getElementById("dateControle").value =
+maintenant.toISOString().split("T")[0];
+
+document.getElementById("heureControle").value =
+maintenant.toTimeString().substring(0,5);
+
+const canvas = document.getElementById("signature");
+const ctx = canvas.getContext("2d");
+
+let dessine = false;
+
+canvas.addEventListener("mousedown", () => {
+dessine = true;
+});
+
+canvas.addEventListener("mouseup", () => {
+dessine = false;
+ctx.beginPath();
+});
+
+canvas.addEventListener("mousemove", dessiner);
+
+function dessiner(e){
+
+if(!dessine) return;
+
+const rect = canvas.getBoundingClientRect();
+
+ctx.lineWidth = 2;
+
+ctx.lineCap = "round";
+
+ctx.strokeStyle = "#000";
+
+ctx.lineTo(
+e.clientX - rect.left,
+e.clientY - rect.top
+);
+
+ctx.stroke();
+
+ctx.beginPath();
+
+ctx.moveTo(
+e.clientX - rect.left,
+e.clientY - rect.top
+);
+
+}
+
+function effacerSignature(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ }
+
+canvas.addEventListener("touchstart", function(e){
+
+dessine = true;
+
+const touch = e.touches[0];
+
+const rect = canvas.getBoundingClientRect();
+
+ctx.moveTo(
+touch.clientX - rect.left,
+touch.clientY - rect.top
+);
+
+});
+
+canvas.addEventListener("touchmove", function(e){
+
+e.preventDefault();
+
+if(!dessine) return;
+
+const touch = e.touches[0];
+
+const rect = canvas.getBoundingClientRect();
+
+ctx.lineWidth = 2;
+
+ctx.lineCap = "round";
+
+ctx.strokeStyle = "#000";
+
+ctx.lineTo(
+touch.clientX - rect.left,
+touch.clientY - rect.top
+);
+
+ctx.stroke();
+
+ctx.beginPath();
+
+ctx.moveTo(
+touch.clientX - rect.left,
+touch.clientY - rect.top
+);
+
+});
+
+canvas.addEventListener("touchend", function(){
+
+dessine = false;
+
+ctx.beginPath();
+
+});
+ 
+</script>
 
 </body>
 </html>
