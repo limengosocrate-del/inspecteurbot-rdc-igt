@@ -1174,9 +1174,7 @@ border:2px solid black;
 font-size:42px;
 font-weight:bold;
 ">
-
 RAPPORT OFFICIEL DE CONTRÔLE F01
-
 </div>
 
 <div style="
@@ -1199,26 +1197,7 @@ Contrôle de la Main-d'Œuvre Nationale et Étrangère
 
 nouvelleFenetre.document.close();
 
-viderFormulaire();
-
- }
-
-</body>
-</html>
-  
-<a href="fiches-controle.html" class="btn">
-
-⬅ RETOUR AUX FICHES DE CONTRÔLE
-
-</a>
-
-</div>
-
-<div class="footer">
-...
-</div>
-
-<script>
+}
 
 function viderFormulaire(){
 document.querySelectorAll("input, textarea, select").forEach(el=>{
@@ -1228,9 +1207,21 @@ el.checked=false;
 el.value="";
 }
 });
-}
-
+ }
+  
 </script>
+
+<a href="fiches-controle.html" class="btn">
+⬅ RETOUR AUX FICHES DE CONTRÔLE
+</a>
+
+<div class="footer">
+InspecteurBot RDC - IGT © 2026
+<br><br>
+Créateur : Inspecteur Pmiller
+<br><br>
+L'assistant numérique des Inspecteurs du Travail de la République Démocratique du Congo
+</div>
 
 </body>
 </html>
