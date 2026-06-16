@@ -960,12 +960,19 @@ JSON.parse(localStorage.getItem("archivesIGT")) || [];
 
 archives.push({
 
-numero:"F01-"+Date.now(),
+numero:
+"IGT/F01/" +
+new Date().getFullYear() +
+"/" +
+Math.floor(Math.random()*100000),
 
 type:"F01 - Contrôle Main-d'œuvre",
 
 entreprise:
 document.getElementById("entreprise").value,
+
+adresse:
+document.getElementById("adresse").value,
 
 province:
 document.getElementById("province").value,
@@ -979,8 +986,14 @@ document.getElementById("commune").value,
 secteur:
 document.getElementById("secteur").value,
 
+siege:
+document.getElementById("siege").value,
+
 responsable:
 document.getElementById("responsable").value,
+
+personne:
+document.getElementById("personne").value,
 
 contactEntreprise:
 document.getElementById("contact").value,
@@ -1004,10 +1017,16 @@ dateVisite:
 document.getElementById("dateVisite").value,
 
 dateArchive:
-new Date().toLocaleDateString(),
+new Date().toLocaleString("fr-FR"),
 
+statut:
+"Contrôle effectué",
+ 
+ priorite:
+"Normale",
+ 
 inspecteur:
-"Inspecteur du Travail",
+"Inspection Générale du Travail",
 
 contactInspecteur:"+243 __________"
 
@@ -1024,10 +1043,87 @@ alert("✅ Fiche F01 enregistrée dans les Archives.");
  
 function genererRapport(){
 
+let numero =
+"IGT/F01/" +
+new Date().getFullYear() +
+"/" +
+Math.floor(Math.random()*100000);
+
 let entreprise =
 document.getElementById("entreprise").value;
 
-alert("📄 Rapport généré pour : " + entreprise);
+let responsable =
+document.getElementById("responsable").value;
+
+let province =
+document.getElementById("province").value;
+
+let ville =
+document.getElementById("ville").value;
+
+let secteur =
+document.getElementById("secteur").value;
+
+let dateVisite =
+document.getElementById("dateVisite").value;
+
+let decision =
+document.getElementById("decisionIGT").value;
+
+let rapport = `
+RAPPORT OFFICIEL DE CONTRÔLE F01
+
+Numéro : ${numero}
+
+Entreprise : ${entreprise}
+
+Secteur : ${secteur}
+
+Province : ${province}
+
+Ville : ${ville}
+
+Responsable : ${responsable}
+
+Date Visite : ${dateVisite}
+
+Décision : ${decision}
+
+------------------------------------------------
+
+I. OBJET DU CONTRÔLE
+
+Contrôle de la main-d'œuvre nationale et étrangère.
+
+------------------------------------------------
+
+II. DOCUMENTS VÉRIFIÉS
+
+- CNSS
+- ONEM
+- INPP
+- Livre de paie
+- Contrats de travail
+
+------------------------------------------------
+
+III. CONCLUSION
+
+Le contrôle a été effectué conformément aux dispositions du Code du Travail.
+
+------------------------------------------------
+
+INSPECTION GÉNÉRALE DU TRAVAIL
+
+Signature : ___________________
+`;
+
+let fenetre =
+window.open("", "_blank");
+
+fenetre.document.write("<pre style='font-size:20px'>" + rapport + "</pre>");
+
+fenetre.document.close();
 
  }
 
