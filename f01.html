@@ -172,38 +172,239 @@ Inspection Générale du Travail
 <label>Nom ou Raison Sociale</label>
 <input type="text" id="entreprise">
 
-<label>Adresse Physique</label>
-<input type="text" id="adresse">
+<label>Adresse Physique Complète</label>
 
-<label>Secteur d'activité</label>
-<input type="text" id="secteur">
+<input
+type="text"
+id="province"
+list="provincesRDC"
+placeholder="Province">
+
+<br><br>
+
+<input
+type="text"
+id="ville"
+list="villesRDC"
+placeholder="Ville">
+
+<br><br>
+
+<input
+type="text"
+id="commune"
+list="communesRDC"
+placeholder="Commune / Territoire">
+
+<br><br>
+
+<input
+type="text"
+id="adresse"
+placeholder="Quartier - Avenue - Numéro - Référence">
+
+<datalist id="provincesRDC">
+
+<option value="Kinshasa">
+<option value="Kongo Central">
+<option value="Kwango">
+<option value="Kwilu">
+<option value="Mai-Ndombe">
+<option value="Équateur">
+<option value="Mongala">
+<option value="Nord-Ubangi">
+<option value="Sud-Ubangi">
+<option value="Tshuapa">
+<option value="Tshopo">
+<option value="Bas-Uele">
+<option value="Haut-Uele">
+<option value="Ituri">
+<option value="Nord-Kivu">
+<option value="Sud-Kivu">
+<option value="Maniema">
+<option value="Tanganyika">
+<option value="Haut-Lomami">
+<option value="Lualaba">
+<option value="Haut-Katanga">
+<option value="Kasaï">
+<option value="Kasaï Central">
+<option value="Kasaï Oriental">
+<option value="Lomami">
+<option value="Sankuru">
+
+</datalist>
+
+<datalist id="villesRDC">
+
+<option value="Kinshasa">
+<option value="Matadi">
+<option value="Boma">
+<option value="Moanda">
+<option value="Kikwit">
+<option value="Bandundu">
+<option value="Inongo">
+<option value="Mbandaka">
+<option value="Gemena">
+<option value="Gbadolite">
+<option value="Boende">
+<option value="Kisangani">
+<option value="Bunia">
+<option value="Isiro">
+<option value="Watsa">
+<option value="Goma">
+<option value="Butembo">
+<option value="Beni">
+<option value="Bukavu">
+<option value="Uvira">
+<option value="Kindu">
+<option value="Kalemie">
+<option value="Lubumbashi">
+<option value="Likasi">
+<option value="Kolwezi">
+<option value="Kamina">
+<option value="Kananga">
+<option value="Mbuji-Mayi">
+<option value="Mwene-Ditu">
+<option value="Lusambo">
+
+</datalist>
+
+<datalist id="communesRDC">
+
+<option value="Gombe">
+<option value="Lingwala">
+<option value="Barumbu">
+<option value="Kinshasa">
+<option value="Kintambo">
+<option value="Ngaliema">
+<option value="Bandalungwa">
+<option value="Kalamu">
+<option value="Kasa-Vubu">
+<option value="Limete">
+<option value="Matete">
+<option value="Lemba">
+<option value="Mont-Ngafula">
+<option value="Selembao">
+<option value="Makala">
+<option value="Ngaba">
+<option value="Bumbu">
+<option value="Kimbanseke">
+<option value="Masina">
+<option value="Nsele">
+<option value="Maluku">
+
+ </datalist>
+
+<input
+<input
+type="text"
+id="secteur"
+list="secteursRDC">
+
+<datalist id="secteursRDC">
+
+<option value="Commerce Général">
+<option value="Banque">
+<option value="Télécommunication">
+<option value="Transport">
+<option value="Construction">
+<option value="Mines">
+<option value="Santé">
+<option value="Éducation">
+<option value="Hôtellerie">
+<option value="Restauration">
+<option value="Industrie">
+<option value="Sécurité">
+<option value="Assurance">
+<option value="Agriculture">
+<option value="Pêche">
+<option value="Élevage">
+<option value="Énergie">
+<option value="Logistique">
+<option value="Immobilier">
+<option value="Informatique">
+<option value="Média">
+<option value="ONG">
+<option value="Administration Publique">
+<option value="Justice">
+<option value="Aviation">
+<option value="Portuaire">
+<option value="Environnement">
+
+</datalist>
 
 <label>Siège Social</label>
 <input type="text" id="siege">
 
 <label>Nom du Responsable</label>
-<input type="text" id="responsable">
+<input
+type="text"
+id="responsable"
+list="qualitesResponsable">
+
+<datalist id="qualitesResponsable">
+
+<option value="Directeur Général">
+<option value="Directeur Administratif">
+<option value="Directeur RH">
+<option value="Gérant">
+<option value="Administrateur">
+<option value="Chef de Personnel">
+<option value="Chef d'Entreprise">
+<option value="Représentant de l'Entreprise">
+
+</datalist>
 
 <label>Personne rencontrée</label>
 <input type="text" id="personne">
 
 <label>Qualité</label>
-<input type="text" id="qualite">
+<input
+type="text"
+id="qualite"
+list="listeQualite">
+
+<datalist id="listeQualite">
+
+<option value="Directeur Général">
+<option value="Directeur RH">
+<option value="Chef du Personnel">
+<option value="Gérant">
+<option value="Administrateur">
+<option value="Comptable">
+<option value="Juriste">
+<option value="Responsable Administratif">
+<option value="Assistant RH">
+
+ </datalist>
 
 <label>Contact</label>
-<input type="text" id="contact">
+<input
+type="tel"
+id="contact"
+value="+243 "
+placeholder="+243 XXX XXX XXX">
 
 <label>Email</label>
 <input type="email" id="email">
 
 <label>CNSS</label>
-<input type="text" id="cnss">
+<input
+type="text"
+id="cnss"
+placeholder="Numéro CNSS">
 
 <label>ONEM</label>
-<input type="text" id="onem">
+<input
+type="text"
+id="onem"
+placeholder="Numéro ONEM">
 
 <label>INPP</label>
-<input type="text" id="inpp">
+<input
+type="text"
+id="inpp"
+placeholder="Numéro INPP">
 
 <label>Précédente visite effectuée par</label>
 <input type="text" id="precedente">
@@ -599,6 +800,7 @@ border-radius:12px;
 <label>Décision</label>
 
 <select
+id="decisionIGT"
 style="
 width:100%;
 padding:15px;
@@ -608,16 +810,28 @@ border-radius:12px;
 
 <option>Visa</option>
 
+<option>Observation verbale</option>
+
+<option>Lettre d'observation</option>
+
 <option>Mise en demeure</option>
 
-<option>Procès-verbal</option>
+<option>PV de constat d'infraction</option>
 
-<option>Classement</option>
+<option>PV d'audition</option>
+
+<option>PV de conciliation</option>
+
+<option>PV de fermeture temporaire</option>
+
+<option>Suspension des travaux dangereux</option>
 
 <option>Transmission au Parquet</option>
 
-<option>Mission complémentaire</option>
+<option>Classement</option>
 
+<option>Mission complémentaire</option>
+ 
 </select>
 
 </div>
@@ -694,10 +908,60 @@ let archives =
 JSON.parse(localStorage.getItem("archivesIGT")) || [];
 
 archives.push({
-type:"F01 - Main-d'œuvre",
-entreprise: document.getElementById("entreprise").value,
-date: new Date().toLocaleDateString(),
-inspecteur:"Inspecteur du Travail"
+
+type:"F01 - Contrôle Main-d'œuvre",
+
+entreprise:
+document.getElementById("entreprise").value,
+
+adresse:
+document.getElementById("adresse").value,
+
+province:
+document.getElementById("province").value,
+
+ville:
+document.getElementById("ville").value,
+
+commune:
+document.getElementById("commune").value,
+
+secteur:
+document.getElementById("secteur").value,
+
+siege:
+document.getElementById("siege").value,
+
+responsable:
+document.getElementById("responsable").value,
+
+personne:
+document.getElementById("personne").value,
+
+contact:
+document.getElementById("contact").value,
+
+email:
+document.getElementById("email").value,
+
+cnss:
+document.getElementById("cnss").value,
+
+onem:
+document.getElementById("onem").value,
+
+inpp:
+document.getElementById("inpp").value,
+
+date:
+new Date().toLocaleDateString(),
+
+inspecteur:
+"Inspecteur du Travail",
+
+decision:
+document.getElementById("decisionIGT").value
+
 });
 
 localStorage.setItem(
@@ -707,6 +971,8 @@ JSON.stringify(archives)
 
 alert("✅ Fiche F01 enregistrée dans les Archives.");
 
+viderFormulaire();
+ 
 }
 
 function genererRapport(){
@@ -777,8 +1043,27 @@ white-space:pre-wrap;
 
 nouvelleFenetre.document.close();
 
+viderFormulaire(); 
+
 }
 
+function viderFormulaire(){
+
+document.querySelectorAll("input, textarea").forEach(function(champ){
+
+if(champ.type==="checkbox"){
+champ.checked=false;
+}else{
+champ.value="";
+}
+
+});
+
+document.querySelectorAll("select").forEach(function(select){
+select.selectedIndex=0;
+});
+
+ }
 </script>
   
 <a href="fiches-controle.html" class="btn">
