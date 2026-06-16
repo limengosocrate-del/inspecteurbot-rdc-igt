@@ -1024,36 +1024,12 @@ alert("✅ Fiche F01 enregistrée dans les Archives.");
  
 function genererRapport(){
 
-alert("📄 Génération du rapport OK");
-
-}
-
 let entreprise =
 document.getElementById("entreprise").value;
 
-let province =
-document.getElementById("province").value;
+alert("📄 Rapport généré pour : " + entreprise);
 
-let ville =
-document.getElementById("ville").value;
-
-let commune =
-document.getElementById("commune").value;
-
-let secteur =
-document.getElementById("secteur").value;
-
-let responsable =
-document.getElementById("responsable").value;
-
-let contact =
-document.getElementById("contact").value;
-
-let decision =
-document.getElementById("decisionIGT").value;
-
-let dateVisite =
-document.getElementById("dateVisite").value;
+ }
 
 let dateRapport =
 new Date().toLocaleDateString("fr-FR");
@@ -1100,52 +1076,7 @@ Les documents administratifs et sociaux requis ont été vérifiés.
 Le contrôle a porté notamment sur :
 
 - Déclaration d'établissement
-- Règlement d'entreprise
-- Convention collective
-- Livre de paie
-- Affiliation CNSS
-- Affiliation ONEM
-- Affiliation INPP
-- Contrats de travail
-- Application du SMIG
-- Effectifs nationaux et expatriés
-
--------------------------------------------------
-
-IV. OBSERVATIONS
-
-Les observations formulées lors du contrôle sont consignées dans la fiche F01 enregistrée dans le système InspecteurBot RDC.
-
--------------------------------------------------
-
-V. DÉCISION PRISE
-
-${decision}
-
--------------------------------------------------
-
-VI. CONCLUSION
-
-Au terme du contrôle effectué auprès de l'entreprise ${entreprise}, les constatations ont été enregistrées dans le système d'archivage de l'Inspection Générale du Travail.
-
-Le présent rapport est établi pour servir et valoir ce que de droit.
-
-Fait à ${ville}, le ${dateRapport}
-
-INSPECTEUR DU TRAVAIL
-
-Signature : ____________________
-
-`;
-
-let nouvelleFenetre =
-window.open("", "_blank");
-
-nouvelleFenetre.document.write(`
-
-<html>
-
-<head>
+   
 
 <title>Rapport F01</title>
 
