@@ -1013,87 +1013,10 @@ contactInspecteur:"+243 __________"
 
 });
 
-type:"F01 - Contrôle Main-d'œuvre",
-
-entreprise:
-document.getElementById("entreprise").value,
-
-adresse:
-document.getElementById("adresse").value,
-
-province:
-document.getElementById("province").value,
-
-ville:
-document.getElementById("ville").value,
-
-commune:
-document.getElementById("commune").value,
-
-secteur:
-document.getElementById("secteur").value,
-
-siege:
-document.getElementById("siege").value,
-
-responsable:
-document.getElementById("responsable").value,
-
-personne:
-document.getElementById("personne").value,
-
-contact:
-document.getElementById("contact").value,
-email:
-document.getElementById("email").value,
-
-cnss:
-document.getElementById("cnss").value,
-
-onem:
-document.getElementById("onem").value,
-function enregistrerFiche(){
-
-let archives =
-JSON.parse(localStorage.getItem("archivesIGT")) || [];
-
-archives.push({
-
-numero:"F01-"+Date.now(),
-
-type:"F01 - Contrôle Main-d'œuvre",
-
-entreprise:document.getElementById("entreprise").value,
-
-adresse:document.getElementById("adresse").value,
-
-province:document.getElementById("province").value,
-
-ville:document.getElementById("ville").value,
-
-commune:document.getElementById("commune").value,
-
-secteur:document.getElementById("secteur").value,
-
-siege:document.getElementById("siege").value,
-
-responsable:document.getElementById("responsable").value,
-
-personne:document.getElementById("personne").value,
-
-contactEntreprise:document.getElementById("contact").value,
-
-email:document.getElementById("email").value,
-
-cnss:document.getElementById("cnss").value,
-
-onem:document.getElementById("onem").value,
-
-inpp:document.getElementById("inpp").value,
-
-decision:document.getElementById("decisionIGT").value,
-
-dateVisite:document.getElementById("dateVisite").value,
+localStorage.setItem(
+"archivesIGT",
+JSON.stringify(archives)
+);
 
 alert("✅ Fiche F01 enregistrée dans les Archives.");
 
