@@ -294,12 +294,14 @@ placeholder="Quartier - Avenue - Numéro - Référence">
 <option value="Maluku">
 
  </datalist>
+ 
+<label>Secteur d'activité</label>
 
-<input
 <input
 type="text"
 id="secteur"
-list="secteursRDC">
+list="secteursRDC"
+placeholder="Sélectionner ou saisir le secteur">
 
 <datalist id="secteursRDC">
 
@@ -337,9 +339,13 @@ list="secteursRDC">
 <input type="text" id="siege">
 
 <label>Nom du Responsable</label>
+<input type="text" id="responsable">
+
+<label>Fonction du Responsable</label>
+
 <input
 type="text"
-id="responsable"
+id="fonctionResponsable"
 list="qualitesResponsable">
 
 <datalist id="qualitesResponsable">
@@ -387,6 +393,15 @@ placeholder="+243 XXX XXX XXX">
 
 <label>Email</label>
 <input type="email" id="email">
+
+ <label>NIF</label>
+<input type="text" id="nif">
+
+<label>RCCM</label>
+<input type="text" id="rccm">
+
+<label>Numéro d'Identification Nationale</label>
+<input type="text" id="idnat">
 
 <label>CNSS</label>
 <input
@@ -939,7 +954,7 @@ personne:
 document.getElementById("personne").value,
 
 contact:
-document.getElementById("contact").value,
+document.getElementById("contact").value = "+243 ";
 
 email:
 document.getElementById("email").value,
@@ -974,57 +989,143 @@ alert("✅ Fiche F01 enregistrée dans les Archives.");
 viderFormulaire();
  
 }
-
+ 
 function genererRapport(){
 
 let entreprise =
 document.getElementById("entreprise").value;
 
+let province =
+document.getElementById("province").value;
+
+let ville =
+document.getElementById("ville").value;
+
+let commune =
+document.getElementById("commune").value;
+
+let secteur =
+document.getElementById("secteur").value;
+
+let responsable =
+document.getElementById("responsable").value;
+
+let contact =
+document.getElementById("contact").value;
+
+let decision =
+document.getElementById("decisionIGT").value;
+
+let dateRapport =
+new Date().toLocaleDateString("fr-FR");
+
 let rapport = `
-RAPPORT OFFICIEL DE CONTRÔLE F01
 
-Entreprise : ${entreprise}
+RAPPORT DE CONTRÔLE F01
 
-Date : ${new Date().toLocaleDateString()}
+INSPECTION GÉNÉRALE DU TRAVAIL
+RÉPUBLIQUE DÉMOCRATIQUE DU CONGO
 
-Inspecteur : ___________________
+-------------------------------------------------
 
-Conclusion :
-....................................
+I. IDENTIFICATION DE L'ENTREPRISE
 
-....................................
+Raison Sociale : ${entreprise}
 
-....................................
+Secteur d'activité : ${secteur}
+
+Province : ${province}
+
+Ville : ${ville}
+
+Commune/Territoire : ${commune}
+
+Responsable rencontré : ${responsable}
+
+Contact : ${contact}
+
+-------------------------------------------------
+
+II. OBJET DU CONTRÔLE
+
+Contrôle de la main-d'œuvre nationale et étrangère conformément aux dispositions du Code du Travail de la République Démocratique du Congo.
+
+-------------------------------------------------
+
+III. CONSTATS EFFECTUÉS
+
+Les documents administratifs et sociaux requis ont été vérifiés.
+
+Le contrôle a porté notamment sur :
+
+- Déclaration d'établissement
+- Règlement d'entreprise
+- Convention collective
+- Livre de paie
+- Affiliation CNSS
+- Affiliation ONEM
+- Affiliation INPP
+- Contrats de travail
+- Application du SMIG
+- Effectifs nationaux et expatriés
+
+-------------------------------------------------
+
+IV. OBSERVATIONS
+
+Les observations formulées lors du contrôle sont consignées dans la fiche F01 enregistrée dans le système InspecteurBot RDC.
+
+-------------------------------------------------
+
+V. DÉCISION PRISE
+
+${decision}
+
+-------------------------------------------------
+
+VI. CONCLUSION
+
+Au terme du contrôle effectué auprès de l'entreprise ${entreprise}, les constatations ont été enregistrées dans le système d'archivage de l'Inspection Générale du Travail.
+
+Le présent rapport est établi pour servir et valoir ce que de droit.
+
+Fait à ${ville}, le ${dateRapport}
+
+INSPECTEUR DU TRAVAIL
+
+Signature : ____________________
+
 `;
 
-let nouvelleFenetre = window.open("", "_blank");
+let nouvelleFenetre =
+window.open("", "_blank");
 
 nouvelleFenetre.document.write(`
+
 <html>
+
 <head>
+
 <title>Rapport F01</title>
 
 <style>
 
 body{
-font-family:Arial,sans-serif;
-padding:40px;
-font-size:24px;
+font-family:"Times New Roman",serif;
+padding:50px;
+font-size:20px;
 line-height:1.8;
-background:white;
-color:black;
 }
 
 h1{
 text-align:center;
-font-size:34px;
-color:#1565c0;
+font-size:32px;
 }
 
 pre{
-font-family:Arial,sans-serif;
-font-size:24px;
 white-space:pre-wrap;
+font-family:"Times New Roman",serif;
+font-size:20px;
 }
 
 </style>
@@ -1038,12 +1139,14 @@ white-space:pre-wrap;
 <pre>${rapport}</pre>
 
 </body>
+
 </html>
+
 `);
 
 nouvelleFenetre.document.close();
 
-viderFormulaire(); 
+viderFormulaire();
 
 }
 
