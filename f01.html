@@ -27,6 +27,71 @@ content="width=device-width,initial-scale=1">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
+header{
+background:#0B3D91;
+color:white;
+padding:15px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+box-shadow:0 3px 8px rgba(0,0,0,.3);
+}
+
+.sousTitre{
+font-size:14px;
+margin-top:5px;
+color:#dfe8ff;
+}
+
+.card{
+background:#fff;
+margin:15px;
+padding:15px;
+border-radius:12px;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+ button{
+background:#0B3D91;
+color:white;
+border:none;
+padding:12px 18px;
+margin:6px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#06295f;
+transform:scale(1.03);
+}
+
+</div>
+ 
+body{
+background:#f4f6f9;
+font-family:Arial,sans-serif;
+margin:0;
+}
+<p><strong>Date :</strong> <span id="dateAuto"></span></p>
+
+<p><strong>Heure :</strong> <span id="heureAuto"></span></p>
+<header>
+ 
+Inspection du Travail RDC
+
+<div class="sousTitre">
+
+Application Professionnelle d'Inspection
+
+</div>
+
+</header>
+
+<div class="card">
+ 
 <style>
 
 :root{
@@ -1396,6 +1461,12 @@ Math.floor(Math.random()*9000+1000);
 
 document.getElementById("numeroControle").value = numero;
 
+<p><strong>N° Inspection :</strong>
+
+<span id="numeroInspection"></span>
+
+</p>
+
 document.getElementById("dateControle").value =
 maintenant.toISOString().split("T")[0];
 
@@ -1506,6 +1577,22 @@ dessine = false;
 ctx.beginPath();
 
 });
+
+function mettreAJourDateHeure(){
+
+const maintenant = new Date();
+
+document.getElementById("dateAuto").textContent =
+maintenant.toLocaleDateString("fr-FR");
+
+document.getElementById("heureAuto").textContent =
+maintenant.toLocaleTimeString("fr-FR");
+
+}
+
+mettreAJourDateHeure();
+
+setInterval(mettreAJourDateHeure,1000);
  
 </script>
 
